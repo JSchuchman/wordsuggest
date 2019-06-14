@@ -31,19 +31,19 @@ function input() {
     readline.clearLine(process.stdout, 0);
     readline.cursorTo(process.stdout, 0);
     
-    if ( key === '\u0003' ) {
+    if ( key === '\u0003' ) { //if user enters '^c'
       process.exit();
-    }else if(key === '\u000D' || key === '\u000A'){
+    }else if(key === '\u000D' || key === '\u000A'){ //if user enters 'return' or 'enter'
       stdin.removeListener('data', keyListener)
       autocompleteprovider.train(currentWord);
       console.log("Input: \"" + currentWord + "\" --> " + candidatesString);
       run()
-    }else if(key === '\u0021'){
+    }else if(key === '\u0021'){ //if user enters '!'
       stdin.removeListener('data', keyListener)
       training = true
       run()
     }else{
-      if(key === '\u007f'){
+      if(key === '\u007f'){//if user enters backspace
         currentWord = currentWord.substring(0, currentWord.length - 1)
       }else{
         currentWord += key
