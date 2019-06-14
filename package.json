@@ -1,0 +1,16 @@
+{
+  "name": "wordsuggest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "run.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node main.js",
+    "run-clean": "export CLEAN_AUTO_COMPLETE=true && node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline": "^1.3.0"
+  }
+}
